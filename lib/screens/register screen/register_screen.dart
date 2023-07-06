@@ -1,9 +1,9 @@
-import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:todo_list_app/base%20view/base_view.dart';
+import 'package:todo_list_app/screens/login%20screen/login%20screen.dart';
 import 'package:todo_list_app/screens/register%20screen/register_connector.dart';
 import 'package:todo_list_app/screens/register%20screen/register_viewmodel.dart';
 import 'package:todo_list_app/screens/register%20screen/validation%20Email.dart';
@@ -205,7 +205,7 @@ class _RegisterScreenState extends BaseView<RegisterViewModel,RegisterScreen> im
                         ),
                       ),
                       TextButton(onPressed: () {
-                        // navigatorReplaceReplacement login
+                        goToLogin();
                       }, child: Text(AppLocalizations.of(context)!.i_already_have_an_account)),
                     ],
                   ),
@@ -218,15 +218,13 @@ class _RegisterScreenState extends BaseView<RegisterViewModel,RegisterScreen> im
     );
   }
 
-  // @override
-  // void goToLogin() {
-  //   Navigator.pushReplacementNamed(context, LoginScreen.routeName);
-  // }
-
   @override
   RegisterViewModel initViewModel() {
     return RegisterViewModel();
   }
 
-
+  @override
+  void goToLogin() {
+    Navigator.pushReplacementNamed(context, LoginScreen.routeName);
+  }
 }

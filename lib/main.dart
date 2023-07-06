@@ -5,10 +5,10 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todo_list_app/provider/application_provider.dart';
+import 'package:todo_list_app/screens/login%20screen/login%20screen.dart';
 import 'package:todo_list_app/screens/register%20screen/register_screen.dart';
 import 'package:todo_list_app/shared/network/local/shared_preferences/shared_prefs.dart';
 import 'package:todo_list_app/shared/style/theme/theme.dart';
-
 import 'firebase_options.dart';
 
 void main() async {
@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes:{
+        LoginScreen.routeName:(context) => LoginScreen(),
         RegisterScreen.routeName:(context) => RegisterScreen()
       },
       theme: ThemeApp.lightTheme,
